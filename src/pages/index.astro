@@ -1,4 +1,6 @@
 ---
+import Scripts from "../imports/scripts.astro";
+import Imports from "../imports/links.astro";
 import Styles from "../imports/styles.astro";
 import Svg from "../imports/path.astro";
 import Layout from "../layouts/Layout.astro";
@@ -9,6 +11,7 @@ import Card from "../components/Card.astro";
   <main>
     <Svg />
     <h1>CSS <span class="text-gradient">BÁSICO</span></h1>
+    <Imports />
 
     <p>
       Ahora pasaremos a crear sitios web atractivos con la ayuda de un lenguaje
@@ -23,6 +26,26 @@ import Card from "../components/Card.astro";
         >blue</span
       >.
     </p>
+
+    <Scripts />
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>HTML</span>
+        <!-- Aquí se podrian poner los botones con los distintos id para mostrar las previews -->
+        <button
+          class="copy-button"
+          onclick="copyCode(document.querySelector('.code-content-1'))"
+        >
+          <i class="fas fa-copy"> Copiar</i>
+        </button>
+      </div>
+      <div class="code-content code-content-1">
+        <pre><code class="language-html">
+  &lt;h2 style="color: blue;"&gt;Delightful Flowers by Brayan&lt;/h2&gt;
+			  </code></pre>
+      </div>
+    </div>
   </main>
 </Layout>
 
