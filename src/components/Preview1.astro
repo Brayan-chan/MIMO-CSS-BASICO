@@ -1,0 +1,63 @@
+---
+interface Props {
+    container: string;
+    title: string;
+    button_class: string;
+    data_button: string;
+    preview_content_class: string;
+    preview_content_id: string;
+    data_id: string;
+    data: string;
+    prev_id: string;
+}
+
+const { container, title, prev_id, data, button_class, data_button, preview_content_class, data_id, preview_content_id } = Astro.props;
+---
+
+<div class={container}>
+    <div id={prev_id}>        
+        <h2 class={title} data-preview-id={data_id} style="background: linear-gradient(to right, #ff0000, #0000ff);">{data}</h2>
+        <button class={button_class}>{data_button}</button>
+        <div class={preview_content_class} data-preview-content-id={preview_content_id}></div>
+    </div>
+</div>
+
+<script is:inline>
+    const previewButtons = document.querySelectorAll('.preview-button');
+
+previewButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const container = button.closest('.preview-container');
+        const previewText = container.querySelector('.preview-text');
+        const previewContent = container.querySelector('.preview-content');
+
+        previewContent.innerHTML = previewText.innerHTML;
+        previewContent.classList.remove('oculto');
+        button.classList.add('oculto');
+        previewText.classList.add('oculto');
+        previewContent.style.display = 'block';
+        button.style.display = 'none';
+        previewText.style.display = 'none';
+        previewContent.style.fontSize = '20px';
+        previewContent.style.color = 'blue';
+        previewContent.style.fontWeight = 'bold';
+        previewContent.style.padding = '20px';
+        previewContent.style.borderRadius = '10px';
+        previewContent.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+        previewContent.style.backgroundColor = 'white';
+
+        const hideButton = document.createElement('button');
+        hideButton.textContent = 'Ocultar';
+        previewContent.appendChild(hideButton);
+        hideButton.addEventListener('click', () => {
+            previewContent.innerHTML = '';
+            previewContent.classList.add('oculto');
+            button.classList.remove('oculto');
+            previewText.classList.remove('oculto');
+            previewContent.style.display = 'none';
+            button.style.display = 'block';
+        });
+    });
+});
+
+</script>

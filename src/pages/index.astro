@@ -3,6 +3,7 @@ import Scripts from "../imports/scripts.astro";
 import Imports from "../imports/links.astro";
 import Styles from "../imports/styles.astro";
 import Svg from "../imports/path.astro";
+import Preview1 from "../components/Preview1.astro";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 ---
@@ -46,6 +47,18 @@ import Card from "../components/Card.astro";
 			  </code></pre>
       </div>
     </div>
+
+    <Preview1
+      container="preview-container"
+      prev_id="preview-1"
+      title="oculto preview-text"
+      data_id="uno"
+      data="Delightful Flowers by Brayan"
+      button_class="preview-button"
+      data_button="Mostrar"
+      preview_content_class="preview-content oculto"
+      preview_content_id="preview-content-uno"
+    />
   </main>
 </Layout>
 
