@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Astro Starter MIMO-CSS-BASICO
 
 ```sh
 npm create astro@latest -- --template basics
@@ -10,7 +10,11 @@ npm create astro@latest -- --template basics
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+<div align="center">
+  
+<img width="800" alt="image" src="public/preview-css-basico.png">
+
+</div>
 
 ## 🚀 Project Structure
 
@@ -23,6 +27,14 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── src/
 │   ├── components/
 │   │   └── Card.astro
+|   |   └── Preview1.astro
+|   |   └── Preview2.astro
+|   ├── imports/
+|   |   └── expand.astro
+|   |   └── links.astro
+|   |   └── path.astro
+|   |   └── scripts.astro
+|   |   └── styles.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
