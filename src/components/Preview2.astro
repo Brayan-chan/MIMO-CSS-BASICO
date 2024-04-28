@@ -1,0 +1,72 @@
+---
+interface Props {
+    contenedor: string;
+    titulo: string;
+    clase_boton: string;
+    info_boton: string;
+    icono_boton: string;
+    visual_content_class: string;
+    visual_content_id: string;
+    info_id: string;
+    info: string;
+    view_id: string;
+}
+
+const { contenedor, info, visual_content_class, visual_content_id, info_id, info_boton, icono_boton, clase_boton, titulo, view_id } = Astro.props;
+---
+
+<div class={contenedor}>
+    <div id={view_id}>
+        <h1 class={titulo} data-preview-id={info_id}>{info}</h1>
+        <button class={clase_boton}><i class={icono_boton}> {info_boton}</i></button>
+        <div class={visual_content_class} data-preview-content-id={visual_content_id}></div>
+    </div>
+</div>
+
+<script is:inline>
+    const visualButtons = document.querySelectorAll('.visual-button');
+
+visualButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const contenedor = button.closest('.visual-container');
+        const visualText = contenedor.querySelector('.visual-text');
+        const visualContent = contenedor.querySelector('.visual-content');
+
+        visualContent.innerHTML = visualText.innerHTML;
+        visualContent.classList.remove('oculto');
+        button.classList.add('oculto');
+        visualText.classList.add('oculto');
+        visualContent.style.display = 'block';
+        button.style.display = 'none';
+        visualText.style.display = 'none';
+        visualContent.style.fontSize = '20px';
+        visualContent.style.color = 'pink';
+        visualContent.style.fontWeight = 'bold';
+        visualContent.style.padding = '10px';
+        visualContent.style.marginRight = '15px';
+        visualContent.style.marginLeft = '15px';
+        visualContent.style.borderRadius = '10px';
+        visualContent.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+        visualContent.style.backgroundColor = 'darkGreen';
+        visualContent.style.border = '2px solid pink';
+
+        const hideButton = document.createElement('button');
+        const hideButtonIcon = document.createElement('i');
+        hideButtonIcon.classList.add('fas', 'fa-times');
+        hideButton.classList.add('hide-button');
+        hideButton.textContent = 'Ocultar ';
+        hideButtonIcon.classList.add('hide-button-icon');
+        visualContent.appendChild(hideButton);
+        hideButton.appendChild(hideButtonIcon);
+
+        hideButton.addEventListener('click', () => {
+            visualContent.innerHTML = '';
+            visualContent.classList.add('oculto');
+            button.classList.remove('oculto');
+            visualText.classList.remove('oculto');
+            visualContent.style.display = 'none';
+            button.style.display = 'block';        });
+    });
+});
+
+</script>
