@@ -1,5 +1,6 @@
 ---
 import Scripts from "../imports/scripts.astro";
+import Expand from "../imports/expand.astro";
 import Imports from "../imports/links.astro";
 import Styles from "../imports/styles.astro";
 import Svg from "../imports/path.astro";
@@ -387,6 +388,14 @@ import Card from "../components/Card.astro";
     <p style="text-align: start;" class="text-gradient">
       Todos los derechos reservados.
     </p>
+    
+    <Expand />
+
+    <button class="btn expand" onclick="mostrarMas()">
+      Aprender más
+    </button>
+
+    <iframe src="https://es.wikipedia.org/wiki/CSS" id="myIframe" frameborder="0" style=" width: 100%; height: 200px; border-radius: 10px; display: none;"></iframe>
   </main>
 </Layout>
 

@@ -1,0 +1,19 @@
+<script is:inline>
+    function mostrarMas() {
+      var iframe = document.getElementById("myIframe");
+      var btn = document.querySelector(".expand");
+      var hideBtn = document.createElement("button");
+      hideBtn.className = "btn";
+      hideBtn.textContent = "Cerrar";
+      hideBtn.onclick = function() {
+        hideBtn.style.display = "none";
+        iframe.style.display = "none";
+        btn.style.display = "block";
+        btn.textContent = "Aprender más";
+        btn.onclick = mostrarMas;
+      };
+      iframe.style.display = "block";
+      btn.style.display = "none";
+      btn.parentNode.insertBefore(hideBtn, btn);
+    }
+  </script>
