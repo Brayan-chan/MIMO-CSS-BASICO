@@ -33,7 +33,6 @@ import Card from "../components/Card.astro";
     <div class="code-container">
       <div class="code-header">
         <span>HTML</span>
-        <!-- Aquí se podrian poner los botones con los distintos id para mostrar las previews -->
         <button
           class="copy-button"
           onclick="copyCode(document.querySelector('.code-content-1'))"
@@ -55,7 +54,8 @@ import Card from "../components/Card.astro";
       data_id="uno"
       data="Delightful Flowers by Brayan"
       button_class="preview-button"
-      data_button="Mostrar"
+	  data_button_icon="fas fa-code"
+      data_button="Ejecutar"
       preview_content_class="preview-content oculto"
       preview_content_id="preview-content-uno"
     />
