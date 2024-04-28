@@ -173,7 +173,7 @@ import Card from "../components/Card.astro";
           </code></pre>
       </div>
     </div>
-    
+
     <Preview2
       contenedor="visual-container"
       view_id="visual-1"
@@ -183,7 +183,7 @@ import Card from "../components/Card.astro";
       clase_boton="visual-button"
       icono_boton="fas fa-code"
       info_boton="Ejecutar"
-      visual_content_class="visual-content oculto" 
+      visual_content_class="visual-content oculto"
       visual_content_id="visual-content-uno"
     />
 
@@ -214,13 +214,13 @@ import Card from "../components/Card.astro";
 
     <p>
       Una de las partes más importantes de un sitio web es el texto.
-      Podemosmodificar el texto de muchas formas, desde el tamaño hasta el
+      Podemos modificar el texto de muchas formas, desde el tamaño hasta el
       estilo o el grosor.
     </p>
 
     <h3>
       Para cambiar el tamaño del texto, usamos la <span class="text-gradient"
-        >propiedas font-size</span
+        >propiedad font-size</span
       >.
     </h3>
 
@@ -384,18 +384,25 @@ import Card from "../components/Card.astro";
       class="btn">Etiquetas de Estilo</button
     ><br />
 
+    <Expand />
+
+    <button class="btn expand" onclick="mostrarMas()"> Aprender más </button>
+
+    <iframe
+      src="https://es.wikipedia.org/wiki/CSS"
+      id="myIframe"
+      frameborder="0"
+      style="
+       width: 100%;
+       height: 200px;
+       border-radius: 10px;
+       display: none;">
+    </iframe>
+
     <p style="text-align: start;" class="text-gradient">@BComputerCenter</p>
     <p style="text-align: start;" class="text-gradient">
       Todos los derechos reservados.
     </p>
-    
-    <Expand />
-
-    <button class="btn expand" onclick="mostrarMas()">
-      Aprender más
-    </button>
-
-    <iframe src="https://es.wikipedia.org/wiki/CSS" id="myIframe" frameborder="0" style=" width: 100%; height: 200px; border-radius: 10px; display: none;"></iframe>
   </main>
 </Layout>
 
