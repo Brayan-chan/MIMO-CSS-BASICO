@@ -50,8 +50,14 @@ previewButtons.forEach((button) => {
         previewContent.style.backgroundColor = 'white';
 
         const hideButton = document.createElement('button');
-        hideButton.textContent = 'Ocultar';
+        const hideButtonIcon = document.createElement('i');
+        hideButtonIcon.classList.add('fas', 'fa-times');
+        hideButton.classList.add('hide-button');
+        hideButton.textContent = 'Ocultar ';
+        hideButtonIcon.classList.add('hide-button-icon');
         previewContent.appendChild(hideButton);
+        hideButton.appendChild(hideButtonIcon);
+
         hideButton.addEventListener('click', () => {
             previewContent.innerHTML = '';
             previewContent.classList.add('oculto');
