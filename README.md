@@ -27,14 +27,14 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── src/
 │   ├── components/
 │   │   └── Card.astro
-|   |   └── Preview1.astro
-|   |   └── Preview2.astro
-|   ├── imports/
-|   |   └── expand.astro
-|   |   └── links.astro
-|   |   └── path.astro
-|   |   └── scripts.astro
-|   |   └── styles.astro
+│   │   └── Preview1.astro
+│   │   └── Preview2.astro
+│   ├── imports/
+│   │   └── expand.astro
+│   │   └── links.astro
+│   │   └── path.astro
+│   │   └── scripts.astro
+│   │   └── styles.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
